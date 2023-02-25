@@ -238,11 +238,11 @@ section{
 	height: 387px; */
 }
 .s-icons i{
-	font-size: 32px;
+	font-size: 50px;
 	margin-bottom: 20px;
 }
 .box h3{
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: 600;
 	color: var(--text-color);
 	margin-bottom: 20px;
@@ -276,7 +276,9 @@ section{
 	cursor: pointer;
 }
 
-.modal {
+.modal,
+.modal2,
+.modal3 {
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -289,33 +291,7 @@ section{
 	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
-  .modal2 {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  .modal3 {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
-	left: 0;
-	top: 0;
-	width: 100%; /* Full width */
-	height: 100%; /* Full height */
-	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+  
   /* #myBtn{
 	position: relative;
 	display: flex;
@@ -500,6 +476,101 @@ section{
 .row:hover .layer{
 	height: 100%;
 }
+ 
+.tabContainer{
+	width: 100%;
+	background-color: var(--bg-color);
+
+	}
+.buttonContainer{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+	
+	border-bottom: 2px solid #202020;
+	position: relative;
+	
+}
+.buttonContainer .tab_btn{
+	font-size: 18px;
+	font-weight: 600;
+	color: #fff;
+	background: none;
+	border: none;
+	padding: 10px;
+	cursor: pointer;
+
+}
+.buttonContainer .tab_btn.active{
+	color: #ff004f;
+	border-radius: 8px;
+		} 
+		.buttonContainer .tab_btn:hover{
+			color: white;
+			border: solid 1px white;
+			width: auto;
+			height: auto;
+			background-color: #444444;
+			border-radius: 8px;
+			transition: all .3s ease;
+				} 		
+.content_box{
+	padding: 20px;
+}
+.content_box .content{
+	display: none;
+	animation: moving .5s ease;
+}
+@keyframes moving {
+	from{transform: translateX(50px);opacity: 0;}
+	to{transform: translateX(0px);opacity: 1;}
+}
+.content_box .content.active{
+	display: block;
+}
+.line{
+	position: absolute;
+	top: 37px;
+	left: 117px;
+	width: 90px;
+	height: 5px;
+	background-color: #000;
+	border-radius: 10px;
+	transition: all .4s ease-in-out;
+}
+/*.tabContainer .buttonContainer{
+	height: 15%;
+}
+.tabContainer .buttonContainer button{
+	width: 25%;
+	height: 100%;
+		float: left;
+	border: none;
+	border-bottom: #000 1px solid;
+	outline: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+	background-color: var(--bg-color);
+
+}
+.tabContainer .buttonContainer button:hover{
+	background-color: var(--second-bg-color);
+	color: #fff;
+}
+.tabContainer .tabPanel{
+	height: 100%;
+	background-color: var(--bg-color);
+	color: white;
+	text-align: center;
+	padding-top: 100px;
+	box-sizing: border-box;
+	font-size: 22px;
+	display: none;
+} */
+
 .contact{
 	background: var(--second-bg-color);
 	display: grid;
@@ -719,6 +790,10 @@ form textarea{
 	.navlist.open{
 		top: 100%;
 	}
+	.portfolio-content{
+		grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+	}
+	
 }
 @media (max-width: 740px){
 	.modal-content p{
@@ -767,6 +842,13 @@ form textarea{
 	.modal-content3{
 		width: 90%;
 		height: auto;
+	}
+	.buttonContainer{
+		display: grid;
+		justify-content: none;
+	}
+	.line{
+		display: none;
 	}
 }
 @media (max-width: 400px){
